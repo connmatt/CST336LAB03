@@ -28,9 +28,8 @@
     
     
     
-    function createDeck(){
+    function createDeck($deck){
         //declare an array for the entire deck max 52 cards, min 1
-        $deck = array();
         $suit = array();
         
         //declare arrays for each suit, and give values to each card
@@ -52,16 +51,14 @@
             }
         }
         
-        echo $deck[14];
-        echo $deck[23];
-        echo $deck[1];
-        echo $deck[43];
+        return $deck;
         
     }
     
     function play(){
-        createDeck();
-        shuffleDeck();
+        $deck = array();
+        createDeck($deck);
+        ShuffleDeck($deck);
     }
     
 ?>
