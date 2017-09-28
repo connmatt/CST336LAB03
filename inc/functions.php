@@ -3,7 +3,7 @@
         
     }
     
-    function addUpPoints(){
+    function getPoints(){
         
     }
     
@@ -49,9 +49,7 @@
         }
         
         for ($i = 1; $i <= $numPlayers; $i++){
-            for($j = 0; $j < $maxCards; $j++){
-            echo "Player". $i . " : " .(${"player" . $i}[$j]) . "<br>";
-            }
+            
         }
     }
     
