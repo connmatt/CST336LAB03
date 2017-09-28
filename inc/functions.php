@@ -11,30 +11,36 @@
         
     }
     
-    function displayImage($player, $pos, $deck){
+    function displayImage($player, $deck){
+        for($j=0; $j < 4; $j++){
+            $random = rand(1,17);
+            echo "<img class='card' src='img/Icons/$random.png' alt='$random' title='".ucfirst($random) ."' width='70' ' hspace='10' ' vspace='10' />";
+            break;
+        }
         for ($i=0; $i < count($player); $i++)
         {
             $card = $player[$i];
+            
             if ($card[0] == 'c')
             {
-                echo "<img id='table$pos' src='img/clubs/$card.png' alt='$card' title='".ucfirst($card) ."' width='70' />";
+                echo "<img class='card' src='img/clubs/$card.png' alt='$card' title='".ucfirst($card) ."' width='70' ' hspace='10' ' vspace='10' />";
             }
             else if ($card[0] == 'd')
             {
-                echo "<img id='table$pos' src='img/diamonds/$card.png' alt='$card' title='".ucfirst($card) ."' width='70' />";
+                echo "<img class='card' src='img/diamonds/$card.png' alt='$card' title='".ucfirst($card) ."' width='70' ' hspace='10' ' vspace='10' />";
             }
             else if ($card[0] == 'h')
             {
-                echo "<img id='table$pos' src='img/hearts/$card.png' alt='$card' title='".ucfirst($card) ."' width='70' />";
+                echo "<img class='card' src='img/hearts/$card.png' alt='$card' title='".ucfirst($card) ."' width='70' ' hspace='10' ' vspace='10' />";
             }
             else if ($card[0] == 's')
             {
-                echo "<img id='table$pos' src='img/spades/$card.png' alt='$card' title='".ucfirst($card) ."' width='70' />";
+                echo "<img class='card' src='img/spades/$card.png' alt='$card' title='".ucfirst($card) ."' width='70' ' hspace='10' ' vspace='10' />";
             }
         }echo "<br>";
-        
-        
     }
+        
+        
     
     /*
         Creates the number of players that wan't to play, and
