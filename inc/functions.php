@@ -11,13 +11,6 @@
         
     }
     
-    function shuffleDeck(){
-        $deck = shuffle($deck);
-        for($i = 0; $i < count($deck); $i++){
-            echo ($deck[$i]);
-        }
-    }
-    
     function players(){
         
     }
@@ -51,14 +44,18 @@
             }
         }
         
+        shuffle($deck);
         return $deck;
         
     }
     
     function play(){
         $deck = array();
-        createDeck($deck);
-        ShuffleDeck($deck);
+        $deck = createDeck($deck);
+        for($i = 0; $i < count($deck); $i++){
+            echo ($deck[$i]);
+            }
+         
     }
     
 ?>
