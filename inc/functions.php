@@ -7,12 +7,34 @@
         
     }
     
-    function passCards(){
+    function displayImage(){
+    
         
     }
     
-    function players(){
+    /*
+        Creates the number of players that wan't to play, and
+        gives the player the max of numbers.
+    */
+    function players($deck, $numPlayers){
+        $maxCards = 5; // The maximum number of cards the player can have
+        $counter = 0;  // To count the number of cards taken from the deck
         
+        // Creates a set of arrays (num of players), and
+        // gives each player their hand
+        for ($i = 1; $i <= $numPlayers; $i++){
+            ${"player" . $i} = new  SplFixedArray(6);
+            for($j = 0; $j < count(${"player" . $i}); $j++){
+                ${"player" . $i}[$j] = $deck[$counter];
+                $counter++;
+            }
+        }
+        
+        for ($i = 1; $i <= $numPlayers; $i++){
+            for($j = 0; $j < $maxCards; $j++){
+            echo "Player". $i . " : " .(${"player" . $i}[$j]) . "<br>";
+            }
+        }
     }
     
     function setPoints($deck){
@@ -52,10 +74,7 @@
     function play(){
         $deck = array();
         $deck = createDeck($deck);
-        for($i = 0; $i < count($deck); $i++){
-            echo ($deck[$i]);
-            }
-         
+        players($deck, 5);
     }
     
 ?>
