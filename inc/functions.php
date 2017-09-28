@@ -11,23 +11,29 @@
         
     }
     
-    function displayImage($card, $pos){
-        if ($card[0] == 'c')
+    function displayImage($player, $pos, $deck){
+        for ($i=0; $i < count($player); $i++)
         {
-            echo "<img id='table$pos' src='img/clubs/$card.png' alt='$card' title='".ucfirst($card) ."' width='70' />";
-        }
-        else if ($card[0] == 'd')
-        {
-            echo "<img id='table$pos' src='img/diamonds/$card.png' alt='$card' title='".ucfirst($card) ."' width='70' />";
-        }
-        else if ($card[0] == 'h')
-        {
-            echo "<img id='table$pos' src='img/hearts/$card.png' alt='$card' title='".ucfirst($card) ."' width='70' />";
-        }
-        else if ($card[0] == 's')
-        {
-            echo "<img id='table$pos' src='img/spades/$card.png' alt='$card' title='".ucfirst($card) ."' width='70' />";
-        }
+            $card = $player[$i];
+            if ($card[0] == 'c')
+            {
+                echo "<img id='table$pos' src='img/clubs/$card.png' alt='$card' title='".ucfirst($card) ."' width='70' />";
+            }
+            else if ($card[0] == 'd')
+            {
+                echo "<img id='table$pos' src='img/diamonds/$card.png' alt='$card' title='".ucfirst($card) ."' width='70' />";
+            }
+            else if ($card[0] == 'h')
+            {
+                echo "<img id='table$pos' src='img/hearts/$card.png' alt='$card' title='".ucfirst($card) ."' width='70' />";
+            }
+            else if ($card[0] == 's')
+            {
+                echo "<img id='table$pos' src='img/spades/$card.png' alt='$card' title='".ucfirst($card) ."' width='70' />";
+            }
+        }echo "<br>";
+        
+        
     }
     
     /*
@@ -49,9 +55,7 @@
         }
         
         for ($i = 1; $i <= $numPlayers; $i++){
-            for($j = 0; $j < $maxCards; $j++){
-            echo "Player". $i . " : " .(${"player" . $i}[$j]) . "<br>";
-            }
+            displayImage(${"player".$i}, $i, $deck);
         }
     }
     
