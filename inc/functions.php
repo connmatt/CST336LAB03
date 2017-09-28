@@ -1,4 +1,8 @@
 <?php
+    function setPoints($deck){
+        
+    }
+    
     function addUpPoints(){
         
     }
@@ -7,9 +11,23 @@
         
     }
     
-    function displayImage(){
-    
-        
+    function displayImage($card, $pos){
+        if ($card[0] == 'c')
+        {
+            echo "<img id='table$pos' src='img/clubs/$card.png' alt='$card' title='".ucfirst($card) ."' width='70' />";
+        }
+        else if ($card[0] == 'd')
+        {
+            echo "<img id='table$pos' src='img/diamonds/$card.png' alt='$card' title='".ucfirst($card) ."' width='70' />";
+        }
+        else if ($card[0] == 'h')
+        {
+            echo "<img id='table$pos' src='img/hearts/$card.png' alt='$card' title='".ucfirst($card) ."' width='70' />";
+        }
+        else if ($card[0] == 's')
+        {
+            echo "<img id='table$pos' src='img/spades/$card.png' alt='$card' title='".ucfirst($card) ."' width='70' />";
+        }
     }
     
     /*
@@ -36,12 +54,6 @@
             }
         }
     }
-    
-    function setPoints($deck){
-        
-    }
-    
-    
     
     function createDeck($deck){
         //declare an array for the entire deck max 52 cards, min 1
