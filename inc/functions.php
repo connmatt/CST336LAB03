@@ -53,8 +53,63 @@
     }
     
     function displayImage($player, $scores){
-    }
+    
+        $ranList = array(0,0,0,0);
+        for($j=0; $j < 4; $j++){
+            $random = rand(1,10);
+            $ranList[i] = $random;
+        }
         
+        $name = "";
+        for($i = 0; $i < count($ranList); $i++){
+            switch($ranList[i]){
+                case 1: $name = "Seamore";
+                        break;
+                case 2: $name = "Elmo";
+                     break;
+                case 3: $name = "Droopy";
+                     break;
+                case 4: $name = "LeDerpet";
+                     break;
+                case 5: $name = "Juliet";
+                     break;
+                case 6: $name = "Romeo";
+                     break;
+                case 7: $name = "Rick";
+                     break;
+                case 8: $name = "Mr. Poopybutthole";
+                     break;
+                case 9: $name = "Hamburgler";
+                     break;
+                case 10: $name = "Morty";
+                     break;
+            }
+            echo "<img class='card' src='img/Icons/$random.png' alt='$random' title='".ucfirst($random) ."' width='70' ' hspace='10' ' vspace='10' />";
+            echo "<div class='player'>" . $name . "</div>";
+            break;   
+        }
+        for ($i=0; $i < count($player); $i++)
+        {
+            $card = $player[$i];
+            
+            if ($card[0] == 'c')
+            {
+                echo "<img class='card' src='img/clubs/$card.png' alt='$card' title='".ucfirst($card) ."' width='70' ' hspace='10' ' vspace='10' />";
+            }
+            else if ($card[0] == 'd')
+            {
+                echo "<img class='card' src='img/diamonds/$card.png' alt='$card' title='".ucfirst($card) ."' width='70' ' hspace='10' ' vspace='10' />";
+            }
+            else if ($card[0] == 'h')
+            {
+                echo "<img class='card' src='img/hearts/$card.png' alt='$card' title='".ucfirst($card) ."' width='70' ' hspace='10' ' vspace='10' />";
+            }
+            else if ($card[0] == 's')
+            {
+                echo "<img class='card' src='img/spades/$card.png' alt='$card' title='".ucfirst($card) ."' width='70' ' hspace='10' ' vspace='10' />";
+            }
+        }echo "<br>";
+    } 
         
     
     /*
