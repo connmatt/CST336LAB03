@@ -42,44 +42,17 @@
     }
     
     function getWinner($scores){
-        
         for($i = 0; $i < count($scores); $i++){
-            if($scores[$i] <= 42){
-                
+            if ($scores[$i] <= 42 ){
+                return "Not Sure if You Won, But You Didn't Lose Either...YAY!";
             }
             else{
-                echo "<h2>Player ". ($i + 1) . " Scored ". $scores[$i] . ": You Lost! </h2><br>";
+                return "You Lost!";
             }
         }
     }
     
-    function displayImage($player, $deck){
-        for($j=0; $j < 4; $j++){
-            $random = rand(1,17);
-            echo "<img class='card' src='img/Icons/$random.png' alt='$random' title='".ucfirst($random) ."' width='70' ' hspace='10' ' vspace='10' />";
-            break;
-        }
-        for ($i=0; $i < count($player); $i++)
-        {
-            $card = $player[$i];
-            
-            if ($card[0] == 'c')
-            {
-                echo "<img class='card' src='img/clubs/$card.png' alt='$card' title='".ucfirst($card) ."' width='70' ' hspace='10' ' vspace='10' />";
-            }
-            else if ($card[0] == 'd')
-            {
-                echo "<img class='card' src='img/diamonds/$card.png' alt='$card' title='".ucfirst($card) ."' width='70' ' hspace='10' ' vspace='10' />";
-            }
-            else if ($card[0] == 'h')
-            {
-                echo "<img class='card' src='img/hearts/$card.png' alt='$card' title='".ucfirst($card) ."' width='70' ' hspace='10' ' vspace='10' />";
-            }
-            else if ($card[0] == 's')
-            {
-                echo "<img class='card' src='img/spades/$card.png' alt='$card' title='".ucfirst($card) ."' width='70' ' hspace='10' ' vspace='10' />";
-            }
-        }echo "<br>";
+    function displayImage($player, $scores){
     }
         
         
@@ -112,9 +85,12 @@
         }
         getWinner($scores);
         
-        
         for ($i = 1; $i <= $numPlayers; $i++){
-            displayImage(${"player".$i}, $i);
+            displayImage(${"player".$i}, $scores);
+            echo $scores[$i-1] . "<br>";
+            $outcome = "";
+            $outcome = getWinner($scores);
+            echo $outcome . "<br>";
         }
     }
     

@@ -9,15 +9,13 @@
     <head>
         <title> Silverjack!</title>
         <link href="https://fonts.googleapis.com/css?family=Asset" rel="stylesheet">
+        <link rel="stylesheet" href="css/format.css" type="text/css"/>
     </head>
     <body id = "main" background = "img/background.jpg">
         <h1 class="Name"><img src ="img/silverjack.png"></img></h1>
         <?php
-        
         play();
-            
         ?>
-
     </body>
     <footer>
             <br><br><br><br><br>
